@@ -1,0 +1,200 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+        background-color: #f2eded;
+
+        }
+        .form {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            padding: 45px;
+            justify-content: flex-start;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .button {
+            background-color: #0c1f66;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            display: flex;
+        }
+        .button:hover {
+            background-color: #273466;
+        }
+
+
+        .evenodd {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            padding: 45px;
+            justify-content: flex-start;
+            margin-top: 1.5%;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .button {
+            background-color: #0c1f66;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            display: flex;
+        }
+        .button:hover {
+            background-color: #273466;
+        }
+
+
+                .add {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            padding: 45px;
+            justify-content: flex-start;
+            margin-top: 1.5%;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .button {
+            background-color: #0c1f66;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+        }
+        .button:hover {
+            background-color: #273466;
+        }
+
+         .box {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            padding: 45px;
+            justify-content: flex-start;
+            margin-top: 1.5%;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .button {
+            background-color: #0c1f66;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+        }
+        .button:hover {
+            background-color: #273466;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="form">
+        <h1>Age Checker</h1>
+        <input id="age" placeholder="enter your age" type="number" id="age" name="age"><br><br>
+        <button class="button"  onclick="checkAge()">Check Age</button>
+        <p id="ageResult"></p>
+    </div>
+        <div class="evenodd">
+        <h1>Even/Odd Checker</h1>
+        <input id="even" placeholder="enter a number" type="number" id="number" name="number"><br><br>
+        <button class="button" type="button" onclick="checkNumber()">Check Number</button>
+        <p id="numberResult"></p>
+    </div>
+
+        </div>
+        <div class="add">
+        <h1>Add two Numbers</h1>
+        <input id="x" placeholder="enter the value of x" type="number" name="x"><br><br>
+        <input id="y" placeholder="enter the value of y" type="number" name="y"><br><br>
+        <button class="button" type="button" onclick="addNumbers()">Add Numbers</button>
+        <p id="addResult"></p>
+    </div>
+
+        <div class="box">
+        <h1>Enter The Details</h1>
+        <input id="name" placeholder="enter your name" type="text" name="name"><br><br>
+        <input id="email" placeholder="enter your email" type="email" name="email"><br><br>
+        <input id="pass" placeholder="enter your password" type="password" name="pass"><br><br>
+        <button class="button" type="button" onclick="saveDetails()">Save Details</button>
+        <p id="detailsResult"></p>
+        <p id="detailsResults"></p>
+        <p id="detailsResulted"></p>
+    </div>
+
+</body>
+    <script>
+        function checkAge() {
+         let age= document.getElementById("age").value;
+            if (age >= 18) {
+                document.getElementById("ageResult").innerText = "You are an adult.";
+            } else {
+                document.getElementById("ageResult").innerText = "You are a minor.";
+            }
+            }
+        function checkNumber() {
+            let number= document.getElementById("even").value;
+            if (number % 2 == 0) {
+                document.getElementById("numberResult").innerText = "The number is even.";
+            } else {
+                document.getElementById("numberResult").innerText = "The number is odd.";
+            }
+
+        }
+        function addNumbers() {
+            let x= document.getElementById("x").value;
+            let y= document.getElementById("y").value;
+            let sum = Number(x) + Number(y);
+            document.getElementById("addResult").innerText = "The sum of two numbers is:"+sum;
+        }
+        function saveDetails() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let pass = document.getElementById("pass").value;
+            document.getElementById("detailsResult").innerHTML = "The name is: "+name;
+            document.getElementById("detailsResults").innerText = "The emailid is: "+email; 
+            document.getElementById("detailsResulted").innerText = "The password is: "+pass;
+        }
+    </script>
+</html>

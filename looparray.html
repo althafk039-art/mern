@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="details">
+    <input id="num" placeholder="Enter the name" type="text" name="num"><br><br>
+    <button class="b1" type="button" onclick="loopArray()">Loop Array</button>
+    <p id="result"></p>
+    </div>
+
+      <div class="container">
+    <button class="button" onclick="showFruits()">Show Fruits</button>
+    <ul id="fruitList"></ul>
+    </div>
+    
+    <style>
+        
+         .details {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            padding: 45px;
+            justify-content: flex-start;
+            margin-top: 1.5%;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .b1 {
+            background-color: #0c1f66;
+            color: white;
+            padding: 10px 20px;
+            border:none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+        }
+        .b1:hover {
+            background-color: #dc0bc4;
+        }
+
+                
+         .container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            padding: 45px;
+            justify-content: flex-start;
+            margin-top: 1.5%;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .button {
+            background-color: #0c1f66;
+            color: white;
+            padding: 10px 20px;
+            border:none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+        }
+        .button:hover {
+            background-color: #dc0bc4;
+        }
+    </style>
+
+</body>
+<script>
+        function loopArray()
+            {
+                let num=document.getElementById("num").value;  
+                let output="";
+                for(let i=1; i<=num; i++)
+                {
+                    output+= " "+i+" ";
+                }
+                document.getElementById("result").innerText   = output;
+            }
+
+            function showFruits(){
+                let fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+                let result = "";
+                for(let i=0; i<fruits.length; i++){
+                    result += "<li>" + fruits[i] + "</li>";
+                }
+                document.getElementById("fruitList").innerHTML = result;
+            }
+</script>
+</html>

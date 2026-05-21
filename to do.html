@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>simple to-do list</h2>
+        <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter Task"
+            >
+        <button onclick="addTask()">
+                Add Task
+        </button>
+        <ul id="TaskList"></ul>
+    </div>
+</body>
+    <script>
+        let tasks =[]
+        
+        function addTask(){
+        let task = document.getElementById('taskInput').value;
+
+        tasks.push(task);
+
+        let result ="";
+        for(let i=0; i<tasks.length; i++){
+            result =
+            result + "<li>"+tasks[i]+"</li>";  
+            }
+        document.getElementById("TaskList").innerHTML=result;
+        }
+    </script>
+</html>
