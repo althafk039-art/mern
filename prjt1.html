@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Complaint Box</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            display: inline-block;
+            padding: 10px 16px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .complaint-card {
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #fafafa;
+        }
+        .complaint-card h2 {
+            margin: 0 0 8px;
+            font-size: 1.1rem;
+        }
+        .complaint-card p {
+            margin: 0 0 10px;
+        }
+        .delete-btn {
+            background: #dc3545;
+        }
+        .delete-btn:hover {
+            background: #a71d2a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Campus Complaint Box</h1>
+        <input type="text" id="studentname" placeholder="Enter student name" />
+        <textarea id="complainttext" placeholder="Enter your complaint"></textarea>
+        <button onclick="addcomplaint()">Add complaint</button>
+        <div id="complaintcontainer"></div>
+    </div>
+
+    <script>
+        let complaints = [];
+
+        function addcomplaint() {
+            const studentname = document.getElementById("studentname").value.trim();
+            const complainttext = document.getElementById("complainttext").value.trim();
+
+            if (!studentname || !complainttext) {
+                alert("Please enter both a student name and a complaint.");
+                return;
+            }
+
+            complaints.push({
+                name: studentname,
+                complainttext: complainttext
+            });
+
+            document.getElementById("studentname").value = "";
+            document.getElementById("complainttext").value = "";
+
+            displaycomplaints();
+        }
+
+        function displaycomplaints() {
+            let result = "";
+
+            for (let i = 0; i < complaints.length; i++) {
+                result += `
+                    <div class="complaint-card">
+                        <h2>${complaints[i].name}</h2>
+                        <p>${complaints[i].complainttext}</p>
+                        <button class="delete-btn" onclick="deletecomplaint(${i})">Delete</button>
+                    </div>
+                `;
+            }
+
+            document.getElementById("complaintcontainer").innerHTML = result;
+        }
+
+        function deletecomplaint(index) {
+            complaints.splice(index, 1);
+            displaycomplaints();
+        }
+    </script>
+</body>
+</html>
